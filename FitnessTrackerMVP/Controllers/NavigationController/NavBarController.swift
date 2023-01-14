@@ -23,7 +23,7 @@ final class NavBarController: UINavigationController {
             .font: R.Fonts.helvelicaRegular(with: 17),
         ]
         
-//        navigationBar.addBottomBorder(with: R.Colors.separator, height: 1)
+        navigationBar.addBottomBorder(with: R.Colors.separator, height: 1)
     }
     
 }

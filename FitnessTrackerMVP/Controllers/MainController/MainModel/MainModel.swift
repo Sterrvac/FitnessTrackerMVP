@@ -15,6 +15,5 @@ class MainModelController: MainModelProtocol {
     
     var presenter: MainPresenterProtocol?
     
-    
 }
 

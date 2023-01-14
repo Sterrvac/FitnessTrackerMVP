@@ -54,7 +54,7 @@ final class TabBarController: UITabBarController {
         
     }
     
-    private func getController(for tab: Tabs) -> MainViewController {
+    private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
         case .view: return MainViewController()
         case .session: return SessionViewController()

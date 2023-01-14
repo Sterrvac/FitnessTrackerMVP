@@ -19,23 +19,4 @@ class MainPresenterController: MainPresenterProtocol {
     var view: MainViewProtocol?
     
     var model: MainModelProtocol?
-    
-}
-
-class MainView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupViews()
-        constraintViews()
-        configurateAppearance()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        setupViews()
-        constraintViews()
-        configurateAppearance()
-    }
 }

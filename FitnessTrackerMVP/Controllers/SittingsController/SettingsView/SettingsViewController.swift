@@ -7,4 +7,30 @@
 
 import UIKit
 
-class SettingsViewController: MainViewController {}
+protocol SettingsViewProtocol {
+    
+}
+
+class SettingsViewController: MainViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = R.Strings.NavBar.settings
+    }
+}
+
+extension SettingsViewController {
+    override func setupViews() {
+        super.setupViews()
+    }
+    
+    override func contraintViews() {
+        super.contraintViews()
+    }
+    
+    override func configurateAppearance() {
+        super.configurateAppearance()
+        
+        title = R.Strings.NavBar.settings
+    }
+}
