@@ -18,12 +18,16 @@
 		FAFED2F62970196600BE0CD9 /* Data + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED2F52970196600BE0CD9 /* Data + ext.swift */; };
 		FAFED2F82970198C00BE0CD9 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED2F72970198C00BE0CD9 /* UIColor + ext.swift */; };
 		FAFED2FA2970199B00BE0CD9 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED2F92970199B00BE0CD9 /* UIView + ext.swift */; };
-		FAFED30329701F8500BE0CD9 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30229701F8500BE0CD9 /* SessionViewController.swift */; };
+		FAFED30329701F8500BE0CD9 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30229701F8500BE0CD9 /* SessionView.swift */; };
 		FAFED3082970208300BE0CD9 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED3072970208300BE0CD9 /* ProgressViewController.swift */; };
 		FAFED30D297020D700BE0CD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30C297020D700BE0CD9 /* SettingsViewController.swift */; };
 		FAFED30F2970311E00BE0CD9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30E2970311E00BE0CD9 /* MainPresenter.swift */; };
 		FAFED311297183E600BE0CD9 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED310297183E600BE0CD9 /* MainModel.swift */; };
 		FAFED3142973EE1600BE0CD9 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED3132973EE1600BE0CD9 /* ReusableView.swift */; };
+		FAFED316297410E400BE0CD9 /* SeesionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED315297410E400BE0CD9 /* SeesionPresenter.swift */; };
+		FAFED318297411CD00BE0CD9 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED317297411CD00BE0CD9 /* SessionModel.swift */; };
+		FAFED31A297413C100BE0CD9 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED319297413C100BE0CD9 /* ProgressPresenter.swift */; };
+		FAFED31C297413EF00BE0CD9 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED31B297413EF00BE0CD9 /* SettingsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +44,16 @@
 		FAFED2F52970196600BE0CD9 /* Data + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data + ext.swift"; sourceTree = "<group>"; };
 		FAFED2F72970198C00BE0CD9 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		FAFED2F92970199B00BE0CD9 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
-		FAFED30229701F8500BE0CD9 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		FAFED30229701F8500BE0CD9 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		FAFED3072970208300BE0CD9 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		FAFED30C297020D700BE0CD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FAFED30E2970311E00BE0CD9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		FAFED310297183E600BE0CD9 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		FAFED3132973EE1600BE0CD9 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		FAFED315297410E400BE0CD9 /* SeesionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeesionPresenter.swift; sourceTree = "<group>"; };
+		FAFED317297411CD00BE0CD9 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		FAFED319297413C100BE0CD9 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPresenter.swift; sourceTree = "<group>"; };
+		FAFED31B297413EF00BE0CD9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +213,7 @@
 			children = (
 				FAFED30B297020BE00BE0CD9 /* SettingsModel */,
 				FAFED30A297020B400BE0CD9 /* SettingsView */,
-				FAFED309297020A200BE0CD9 /* SettingsController */,
+				FAFED309297020A200BE0CD9 /* SettingsPresenter */,
 			);
 			path = SittingsController;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 		FAFED2FF29701F2C00BE0CD9 /* SessionModel */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED317297411CD00BE0CD9 /* SessionModel.swift */,
 			);
 			path = SessionModel;
 			sourceTree = "<group>";
@@ -220,7 +229,7 @@
 		FAFED30029701F3A00BE0CD9 /* SessionView */ = {
 			isa = PBXGroup;
 			children = (
-				FAFED30229701F8500BE0CD9 /* SessionViewController.swift */,
+				FAFED30229701F8500BE0CD9 /* SessionView.swift */,
 			);
 			path = SessionView;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 		FAFED30129701F4400BE0CD9 /* SessionPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED315297410E400BE0CD9 /* SeesionPresenter.swift */,
 			);
 			path = SessionPresenter;
 			sourceTree = "<group>";
@@ -235,6 +245,7 @@
 		FAFED3042970204500BE0CD9 /* ProgressPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED319297413C100BE0CD9 /* ProgressPresenter.swift */,
 			);
 			path = ProgressPresenter;
 			sourceTree = "<group>";
@@ -254,11 +265,12 @@
 			path = ProgressModel;
 			sourceTree = "<group>";
 		};
-		FAFED309297020A200BE0CD9 /* SettingsController */ = {
+		FAFED309297020A200BE0CD9 /* SettingsPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED31B297413EF00BE0CD9 /* SettingsPresenter.swift */,
 			);
-			path = SettingsController;
+			path = SettingsPresenter;
 			sourceTree = "<group>";
 		};
 		FAFED30A297020B400BE0CD9 /* SettingsView */ = {
@@ -359,7 +371,7 @@
 				FAFED311297183E600BE0CD9 /* MainModel.swift in Sources */,
 				FAFED2D62970166600BE0CD9 /* MainView.swift in Sources */,
 				FAFED3082970208300BE0CD9 /* ProgressViewController.swift in Sources */,
-				FAFED30329701F8500BE0CD9 /* SessionViewController.swift in Sources */,
+				FAFED30329701F8500BE0CD9 /* SessionView.swift in Sources */,
 				FAFED3142973EE1600BE0CD9 /* ReusableView.swift in Sources */,
 				FAFED2E82970178800BE0CD9 /* TabBarController.swift in Sources */,
 				FAFED2D22970166600BE0CD9 /* AppDelegate.swift in Sources */,
@@ -367,8 +379,12 @@
 				FAFED30F2970311E00BE0CD9 /* MainPresenter.swift in Sources */,
 				FAFED2EA297017E400BE0CD9 /* NavBarController.swift in Sources */,
 				FAFED2D42970166600BE0CD9 /* SceneDelegate.swift in Sources */,
+				FAFED31C297413EF00BE0CD9 /* SettingsPresenter.swift in Sources */,
 				FAFED2F82970198C00BE0CD9 /* UIColor + ext.swift in Sources */,
 				FAFED30D297020D700BE0CD9 /* SettingsViewController.swift in Sources */,
+				FAFED31A297413C100BE0CD9 /* ProgressPresenter.swift in Sources */,
+				FAFED318297411CD00BE0CD9 /* SessionModel.swift in Sources */,
+				FAFED316297410E400BE0CD9 /* SeesionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

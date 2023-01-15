@@ -8,13 +8,21 @@
 import UIKit
 
 protocol BaseViewProtocol {
-    var presenter: MainPresenterProtocol? { get set }
+    var mainPresenter: MainPresenterProtocol? { get set }
+    var sessionPresenter: SessionPresenterProtocol? { get set }
+    var progressPresenter: ProgressPresenterProtocol? { get set }
+    var settingsPresenter: SettingsPresenterProtocol? { get set }
 }
 
 class MainViewController: UIViewController, BaseViewProtocol {
+    var mainPresenter: MainPresenterProtocol?
     
-    var presenter: MainPresenterProtocol?
-
+    var sessionPresenter: SessionPresenterProtocol?
+    
+    var progressPresenter: ProgressPresenterProtocol?
+    
+    var settingsPresenter: SettingsPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +51,19 @@ class MainViewController: UIViewController, BaseViewProtocol {
 }
 
 class View: UIView, BaseViewProtocol {
-    var presenter: MainPresenterProtocol?
+    var mainPresenter: MainPresenterProtocol?
+    
+    var sessionPresenter: SessionPresenterProtocol?
+    
+    var progressPresenter: ProgressPresenterProtocol?
+    
+    var settingsPresenter: SettingsPresenterProtocol?
+    
+    struct Data {
+        let value: String
+        let heightMultiplier: Double
+        let title: String
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -11,7 +11,7 @@ protocol SettingsViewProtocol {
     
 }
 
-class SettingsViewController: MainViewController {
+class SettingsView: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +19,7 @@ class SettingsViewController: MainViewController {
     }
 }
 
-extension SettingsViewController {
+extension SettingsView {
     override func setupViews() {
         super.setupViews()
     }

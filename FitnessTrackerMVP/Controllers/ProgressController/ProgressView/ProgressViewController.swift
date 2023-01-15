@@ -7,6 +7,8 @@
 
 import UIKit
 
-class ProgressViewController: MainViewController {
+protocol ProgressViewProtocol {}
+
+class ProgressView: MainViewController, ProgressViewProtocol {
     
 }

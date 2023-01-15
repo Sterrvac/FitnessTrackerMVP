@@ -13,7 +13,8 @@ protocol MainViewProtocol {
 
 //MARK: - MainViewController
 
-class MainView: MainViewController {
+class MainView: MainViewController, MainViewProtocol {
+    var presenter: MainPresenterProtocol?
     
     let navBar = MainViewNavBar()
 
@@ -403,3 +404,125 @@ private extension MainButton {
         makeSystem(self)
     }
 }
+
+//MARK: - BarsMainView
+
+class BarsView: View {
+    private let stackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillEqually
+        return view
+    }()
+    
+    func configurate(with data: [BarView.Data]) {
+        data.forEach {
+            let barView = BarView(data: $0)
+            stackView.addArrangedSubview(barView)
+        }
+    }
+}
+
+extension BarsView {
+    override func setupViews() {
+        super.setupViews()
+        
+        setupView(stackView)
+    }
+    
+    override func constraintViews() {
+        super.constraintViews()
+        
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
+    }
+    
+    override func configurateAppearance() {
+        super.configurateAppearance()
+        
+        backgroundColor = .clear
+    }
+}
+
+class BarView: View {
+    
+    private let heightMultiplier: Double
+    
+    private let valueLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.Fonts.helvelicaRegular(with: 13)
+        label.textColor = R.Colors.active
+        
+        return label
+    }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.Fonts.helvelicaRegular(with: 9)
+        label.textColor = R.Colors.inactive
+        
+        return label
+    }()
+    
+    private let barView: UIView = {
+        let view = UIView()
+        view.backgroundColor = R.Colors.active
+        view.layer.cornerRadius = 2.5
+        
+        return view
+    }()
+    
+    init(data: Data) {
+        self.heightMultiplier = data.heightMultiplier
+        super.init(frame: .zero)
+        
+        titleLabel.text = data.title.uppercased()
+        valueLabel.text = data.value
+    }
+    
+    required init?(coder: NSCoder) {
+        self.heightMultiplier = 0
+        super.init(frame: .zero)
+    }
+    
+}
+
+
+extension BarView {
+    override func setupViews() {
+        super.setupViews()
+        
+        setupView(valueLabel)
+        setupView(titleLabel)
+        setupView(barView)
+    }
+    
+    override func constraintViews() {
+        super.constraintViews()
+
+        NSLayoutConstraint.activate([
+            valueLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            valueLabel.heightAnchor.constraint(equalToConstant: 10),
+            
+            barView.topAnchor.constraint(equalTo: valueLabel.bottomAnchor, constant: 5),
+            barView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            barView.widthAnchor.constraint(equalToConstant: 17),
+            barView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: heightMultiplier * 0.8),
+            
+            titleLabel.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: 10),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 10),
+        ])
+    }
+    
+    override func configurateAppearance() {
+        super.configurateAppearance()
+        
+        backgroundColor = .clear
+    }
+}
+

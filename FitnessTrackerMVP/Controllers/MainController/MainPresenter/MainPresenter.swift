@@ -10,8 +10,6 @@ import UIKit
 protocol MainPresenterProtocol {
     var view: MainViewProtocol? { get set }
     var model: MainModelProtocol? { get set }
-    
-    
 }
 
 class MainPresenterController: MainPresenterProtocol {
