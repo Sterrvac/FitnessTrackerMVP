@@ -8,5 +8,13 @@
 import UIKit
 
 protocol ProgressPresenterProtocol {
+    var view: ProgressViewProtocol? { get set }
+    var model: ProgressModelProtocol? { get set }
+}
+
+class ProgressPresenter: ProgressPresenterProtocol {
     
+    var view: ProgressViewProtocol?
+    
+    var model: ProgressModelProtocol?
 }

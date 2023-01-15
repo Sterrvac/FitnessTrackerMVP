@@ -1,5 +1,5 @@
 //
-//  SeesionPresenter.swift
+//  SessionPresenter.swift
 //  FitnessTrackerMVP
 //
 //  Created by macbook on 15.01.2023.

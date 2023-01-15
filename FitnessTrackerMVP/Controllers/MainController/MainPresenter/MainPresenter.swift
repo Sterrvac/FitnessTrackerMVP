@@ -12,7 +12,7 @@ protocol MainPresenterProtocol {
     var model: MainModelProtocol? { get set }
 }
 
-class MainPresenterController: MainPresenterProtocol {
+class MainPresenter: MainPresenterProtocol {
     
     var view: MainViewProtocol?
     

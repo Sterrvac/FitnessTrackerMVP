@@ -11,7 +11,7 @@ protocol MainModelProtocol {
     var presenter: MainPresenterProtocol? { get set }
 }
 
-class MainModelController: MainModelProtocol {
+class MainModel: MainModelProtocol {
     
     var presenter: MainPresenterProtocol?
     

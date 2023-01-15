@@ -19,15 +19,16 @@
 		FAFED2F82970198C00BE0CD9 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED2F72970198C00BE0CD9 /* UIColor + ext.swift */; };
 		FAFED2FA2970199B00BE0CD9 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED2F92970199B00BE0CD9 /* UIView + ext.swift */; };
 		FAFED30329701F8500BE0CD9 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30229701F8500BE0CD9 /* SessionView.swift */; };
-		FAFED3082970208300BE0CD9 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED3072970208300BE0CD9 /* ProgressViewController.swift */; };
+		FAFED3082970208300BE0CD9 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED3072970208300BE0CD9 /* ProgressView.swift */; };
 		FAFED30D297020D700BE0CD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30C297020D700BE0CD9 /* SettingsViewController.swift */; };
 		FAFED30F2970311E00BE0CD9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30E2970311E00BE0CD9 /* MainPresenter.swift */; };
 		FAFED311297183E600BE0CD9 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED310297183E600BE0CD9 /* MainModel.swift */; };
 		FAFED3142973EE1600BE0CD9 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED3132973EE1600BE0CD9 /* ReusableView.swift */; };
-		FAFED316297410E400BE0CD9 /* SeesionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED315297410E400BE0CD9 /* SeesionPresenter.swift */; };
+		FAFED316297410E400BE0CD9 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED315297410E400BE0CD9 /* SessionPresenter.swift */; };
 		FAFED318297411CD00BE0CD9 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED317297411CD00BE0CD9 /* SessionModel.swift */; };
 		FAFED31A297413C100BE0CD9 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED319297413C100BE0CD9 /* ProgressPresenter.swift */; };
 		FAFED31C297413EF00BE0CD9 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED31B297413EF00BE0CD9 /* SettingsPresenter.swift */; };
+		FAFED31E297472C800BE0CD9 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED31D297472C800BE0CD9 /* ProgressModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,15 +46,16 @@
 		FAFED2F72970198C00BE0CD9 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		FAFED2F92970199B00BE0CD9 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		FAFED30229701F8500BE0CD9 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
-		FAFED3072970208300BE0CD9 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		FAFED3072970208300BE0CD9 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		FAFED30C297020D700BE0CD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FAFED30E2970311E00BE0CD9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		FAFED310297183E600BE0CD9 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		FAFED3132973EE1600BE0CD9 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		FAFED315297410E400BE0CD9 /* SeesionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeesionPresenter.swift; sourceTree = "<group>"; };
+		FAFED315297410E400BE0CD9 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
 		FAFED317297411CD00BE0CD9 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		FAFED319297413C100BE0CD9 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPresenter.swift; sourceTree = "<group>"; };
 		FAFED31B297413EF00BE0CD9 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		FAFED31D297472C800BE0CD9 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,7 +239,7 @@
 		FAFED30129701F4400BE0CD9 /* SessionPresenter */ = {
 			isa = PBXGroup;
 			children = (
-				FAFED315297410E400BE0CD9 /* SeesionPresenter.swift */,
+				FAFED315297410E400BE0CD9 /* SessionPresenter.swift */,
 			);
 			path = SessionPresenter;
 			sourceTree = "<group>";
@@ -253,7 +255,7 @@
 		FAFED3052970205C00BE0CD9 /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				FAFED3072970208300BE0CD9 /* ProgressViewController.swift */,
+				FAFED3072970208300BE0CD9 /* ProgressView.swift */,
 			);
 			path = ProgressView;
 			sourceTree = "<group>";
@@ -261,6 +263,7 @@
 		FAFED3062970206800BE0CD9 /* ProgressModel */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED31D297472C800BE0CD9 /* ProgressModel.swift */,
 			);
 			path = ProgressModel;
 			sourceTree = "<group>";
@@ -370,7 +373,8 @@
 				FAFED2FA2970199B00BE0CD9 /* UIView + ext.swift in Sources */,
 				FAFED311297183E600BE0CD9 /* MainModel.swift in Sources */,
 				FAFED2D62970166600BE0CD9 /* MainView.swift in Sources */,
-				FAFED3082970208300BE0CD9 /* ProgressViewController.swift in Sources */,
+				FAFED31E297472C800BE0CD9 /* ProgressModel.swift in Sources */,
+				FAFED3082970208300BE0CD9 /* ProgressView.swift in Sources */,
 				FAFED30329701F8500BE0CD9 /* SessionView.swift in Sources */,
 				FAFED3142973EE1600BE0CD9 /* ReusableView.swift in Sources */,
 				FAFED2E82970178800BE0CD9 /* TabBarController.swift in Sources */,
@@ -384,7 +388,7 @@
 				FAFED30D297020D700BE0CD9 /* SettingsViewController.swift in Sources */,
 				FAFED31A297413C100BE0CD9 /* ProgressPresenter.swift in Sources */,
 				FAFED318297411CD00BE0CD9 /* SessionModel.swift in Sources */,
-				FAFED316297410E400BE0CD9 /* SeesionPresenter.swift in Sources */,
+				FAFED316297410E400BE0CD9 /* SessionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
