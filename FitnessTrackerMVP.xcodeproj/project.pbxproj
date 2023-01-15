@@ -23,6 +23,7 @@
 		FAFED30D297020D700BE0CD9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30C297020D700BE0CD9 /* SettingsViewController.swift */; };
 		FAFED30F2970311E00BE0CD9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED30E2970311E00BE0CD9 /* MainPresenter.swift */; };
 		FAFED311297183E600BE0CD9 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED310297183E600BE0CD9 /* MainModel.swift */; };
+		FAFED3142973EE1600BE0CD9 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFED3132973EE1600BE0CD9 /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FAFED30C297020D700BE0CD9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FAFED30E2970311E00BE0CD9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		FAFED310297183E600BE0CD9 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		FAFED3132973EE1600BE0CD9 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		FAFED2EB297017ED00BE0CD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAFED3122973EE0400BE0CD9 /* ReusableView */,
 				FAFED2EC2970181900BE0CD9 /* NavigationController */,
 				FAFED2ED2970183C00BE0CD9 /* MainController */,
 				FAFED2FB29701E8900BE0CD9 /* SessionController */,
@@ -273,6 +276,14 @@
 			path = SettingsModel;
 			sourceTree = "<group>";
 		};
+		FAFED3122973EE0400BE0CD9 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				FAFED3132973EE1600BE0CD9 /* ReusableView.swift */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,6 +360,7 @@
 				FAFED2D62970166600BE0CD9 /* MainView.swift in Sources */,
 				FAFED3082970208300BE0CD9 /* ProgressViewController.swift in Sources */,
 				FAFED30329701F8500BE0CD9 /* SessionViewController.swift in Sources */,
+				FAFED3142973EE1600BE0CD9 /* ReusableView.swift in Sources */,
 				FAFED2E82970178800BE0CD9 /* TabBarController.swift in Sources */,
 				FAFED2D22970166600BE0CD9 /* AppDelegate.swift in Sources */,
 				FAFED2F32970193B00BE0CD9 /* Resource.swift in Sources */,

@@ -13,75 +13,33 @@ protocol MainViewProtocol {
 
 //MARK: - MainViewController
 
-class MainViewController: UIViewController, MainViewProtocol {
-    
-    var presenter: MainPresenterProtocol?
+class MainView: MainViewController {
     
     let navBar = MainViewNavBar()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupViews() {
+        super.setupViews()
         
-        setupViews()
-        contraintViews()
-        configurateAppearance()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         view.setupView(navBar)
-        
+    }
+
+    override func contraintViews() {
+        super.contraintViews()
+
         NSLayoutConstraint.activate([
             navBar.topAnchor.constraint(equalTo: view.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-        
+    }
+
+    override func configurateAppearance() {
+        super.configurateAppearance()
+
         navigationController?.navigationBar.isHidden = true
+
     }
 }
-
-@objc extension MainViewController {
-    
-    func setupViews() {}
-    func contraintViews() {}
-    
-    func configurateAppearance() {
-        view.backgroundColor = R.Colors.background
-    }
-
-    func navBarLeftButtonHandler() {
-        print("NavBar left button tapped")
-    }
-    
-    func navBarRightButtonHandler() {
-        print("NavBar right button tapped")
-    }
-}
-
-//class ViewController: MainViewController {
-//
-//    override func setupViews() {
-//        self.setupViews()
-//
-//    }
-//
-//    override func contraintViews() {
-//        self.contraintViews()
-//
-//        NSLayoutConstraint.activate([
-//            navBar.topAnchor.constraint(equalTo: view.topAnchor),
-//            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//        ])
-//    }
-//
-//    override func configurateAppearance() {
-//        self.configurateAppearance()
-//
-//        navigationController?.navigationBar.isHidden = true
-//
-//    }
-//}
 
 extension MainViewController {
     enum NavBarPosition {
@@ -108,73 +66,6 @@ extension MainViewController {
 }
 
 //MARK: - MainView
-
-class MainView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupViews()
-        constraintViews()
-        configurateAppearance()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        setupViews()
-        constraintViews()
-        configurateAppearance()
-    }
-}
-
-@objc extension MainView {
-    func setupViews() {}
-    func constraintViews() {}
-    
-    func configurateAppearance() {
-        backgroundColor = .white
-    }
-}
-
-class MainInfoView: MainView {
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.Fonts.helvelicaRegular(with: 13)
-        label.textColor = R.Colors.inactive
-        return label
-    }()
-    
-    private let button = MainButton(with: .primary)
-    
-    let contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.borderColor = R.Colors.separator.cgColor
-        view.layer.borderWidth = 1
-        view.layer.cornerRadius = 5
-        
-        return view
-    }()
-    
-    init(with title: String? = nil, buttonTitle: String? = nil) {
-        titleLabel.text = title?.uppercased()
-        titleLabel.textAlignment = buttonTitle == nil ? .center : .left
-        
-        button.setTitle(buttonTitle?.uppercased())
-        button.isHidden = buttonTitle == nil ? true : false
-        
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(frame: .zero)
-    }
-    
-    func addButtonTarget(target: Any?, action: Selector) {
-        button.addTarget(action, action: action, for: .touchUpInside)
-    }
-}
 
 extension MainInfoView {
     override func setupViews() {
@@ -216,7 +107,7 @@ extension MainInfoView {
 
 //MARK: - MainViewNavBar
 
-final class MainViewNavBar: MainView {
+final class MainViewNavBar: View {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -302,7 +193,7 @@ extension MainViewNavBar {
     }
 }
 
-final class WeekView: MainView {
+final class WeekView: View {
 
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -350,7 +241,7 @@ extension WeekView {
 }
 
 extension WeekView {
-    final class WeekdayView: MainView {
+    final class WeekdayView: View {
         
         private let nameLabel: UILabel = {
             let label = UILabel()
