@@ -36,7 +36,6 @@ class MainView: MainViewController, MainViewProtocol {
     }
     
     func configurateCustomView() {
-        print("1")
         navBar.addAdditingAction(#selector(button), self)
     }
 
