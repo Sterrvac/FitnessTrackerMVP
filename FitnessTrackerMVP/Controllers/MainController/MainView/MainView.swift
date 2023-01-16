@@ -22,6 +22,7 @@ class MainView: MainViewController, MainViewProtocol {
         super.setupViews()
         
         view.setupView(navBar)
+        configurateCustomView()
     }
 
     override func contraintViews() {
@@ -33,12 +34,17 @@ class MainView: MainViewController, MainViewProtocol {
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
+    
+    func configurateCustomView() {
+        print("1")
+        navBar.addAdditingAction(#selector(button), self)
+    }
 
     override func configurateAppearance() {
         super.configurateAppearance()
 
         navigationController?.navigationBar.isHidden = true
-
+        
     }
 }
 
@@ -63,6 +69,23 @@ extension MainViewController {
             button.addTarget(self, action: #selector(navBarRightButtonHandler), for: .touchUpInside)
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         }
+    }
+    
+    @objc func button(_ sender: Any?) {
+        print("ok")
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete this?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Type in alert"
+        })
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
 }
 
@@ -108,7 +131,7 @@ extension MainInfoView {
 
 //MARK: - MainViewNavBar
 
-final class MainViewNavBar: View {
+class MainViewNavBar: View {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -118,9 +141,10 @@ final class MainViewNavBar: View {
         return label
     }()
     
-    private let addButton: UIButton = {
+    let addButton: UIButton = {
         let button = UIButton()
         button.setImage(R.Images.Common.add, for: .normal)
+        button.addTarget(nil, action: #selector(addAdditingAction), for: .touchUpInside)
         return button
     }()
     
@@ -140,12 +164,13 @@ final class MainViewNavBar: View {
     func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
         allWorkoutsButton.addTarget(target, action: action, for: .touchUpInside)
     }
-    func addAdditingAction(_ action: Selector, with target: Any?) {
-        addButton.addTarget(target, action: action, for: .touchUpInside)
+    @objc func addAdditingAction(_ action: Selector, _ target: Any?) {
+        addButton.addTarget(nil, action: action, for: .touchUpInside)
     }
 }
 
 extension MainViewNavBar {
+    
     override func setupViews() {
         super.setupViews()
         
@@ -153,6 +178,7 @@ extension MainViewNavBar {
         setupView(addButton)
         setupView(allWorkoutsButton)
         setupView(weekView)
+        
     }
     
     override func constraintViews() {
