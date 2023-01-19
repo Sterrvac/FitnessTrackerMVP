@@ -13,7 +13,7 @@ protocol MainViewProtocol {
 
 //MARK: - MainViewController
 
-class MainView: MainViewController, MainViewProtocol {
+class MainView: MainViewController, MainViewProtocol, UITableViewDataSource {
     var presenter: MainPresenterProtocol?
     
     let navBar = MainViewNavBar()
@@ -22,7 +22,9 @@ class MainView: MainViewController, MainViewProtocol {
         super.setupViews()
         
         view.setupView(navBar)
-        configurateCustomView()
+        view.setupView(table)
+        table.dataSource = self
+        contraintAddButton()
     }
 
     override func contraintViews() {
@@ -32,10 +34,24 @@ class MainView: MainViewController, MainViewProtocol {
             navBar.topAnchor.constraint(equalTo: view.topAnchor),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            table.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            table.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            table.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
     
-    func configurateCustomView() {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = items[indexPath.row]
+        return cell
+    }
+    
+    func contraintAddButton() {
         navBar.addAdditingAction(#selector(button), self)
     }
 
@@ -70,20 +86,23 @@ extension MainViewController {
         }
     }
     
-    @objc func button(_ sender: Any?) {
+    @objc func button() {
         print("ok")
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete this?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-            print("Ok button tapped")
-        })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            print("Cancel button tapped")
-        }
         alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Type in alert"
-        })
-        alert.addAction(ok)
-        alert.addAction(cancel)
+            textField.placeholder = "Type in alert"})
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] (_) in
+            if let filed = alert.textFields?.first {
+                if let text = filed.text, !text.isEmpty {
+                    DispatchQueue.main.async {
+                        self?.items.append(text)
+                        self?.table.reloadData()
+                    }
+                }
+            }
+        }))
+
         present(alert, animated: true)
     }
 }
@@ -163,6 +182,7 @@ class MainViewNavBar: View {
     func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
         allWorkoutsButton.addTarget(target, action: action, for: .touchUpInside)
     }
+    
     @objc func addAdditingAction(_ action: Selector, _ target: Any?) {
         addButton.addTarget(nil, action: action, for: .touchUpInside)
     }
@@ -219,7 +239,7 @@ extension MainViewNavBar {
     }
 }
 
-final class WeekView: View {
+class WeekView: View {
 
     private let stackView: UIStackView = {
         let stackView = UIStackView()

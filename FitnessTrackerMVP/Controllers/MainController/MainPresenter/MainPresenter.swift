@@ -17,4 +17,5 @@ class MainPresenter: MainPresenterProtocol {
     var view: MainViewProtocol?
     
     var model: MainModelProtocol?
+
 }

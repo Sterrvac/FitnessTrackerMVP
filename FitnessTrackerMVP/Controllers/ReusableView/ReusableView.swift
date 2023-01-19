@@ -15,6 +15,7 @@ protocol BaseViewProtocol {
 }
 
 class MainViewController: UIViewController, BaseViewProtocol {
+    
     var mainPresenter: MainPresenterProtocol?
     
     var sessionPresenter: SessionPresenterProtocol?
@@ -22,6 +23,15 @@ class MainViewController: UIViewController, BaseViewProtocol {
     var progressPresenter: ProgressPresenterProtocol?
     
     var settingsPresenter: SettingsPresenterProtocol?
+    
+    var items = [String]()
+    
+    let table: UITableView = {
+        let table = UITableView()
+        table.register(UITableViewCell.self,
+                       forCellReuseIdentifier: "cell")
+        return table
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +61,7 @@ class MainViewController: UIViewController, BaseViewProtocol {
 }
 
 class View: UIView, BaseViewProtocol {
+    
     var mainPresenter: MainPresenterProtocol?
     
     var sessionPresenter: SessionPresenterProtocol?
@@ -130,3 +141,4 @@ class MainInfoView: View {
         button.addTarget(action, action: action, for: .touchUpInside)
     }
 }
+

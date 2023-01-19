@@ -98,7 +98,7 @@ enum R {
             static let heartRate = UIImage(systemName: "speedometer")
             static let averagePace = UIImage(systemName: "bolt.heart")
             static let totalSteps = UIImage(systemName: "map")
-            static let totalDistance = UIImage(systemName: "figure.walk.motion")
+            static let totalDistance = UIImage(systemName: "figure.walk")
         }
     }
     
